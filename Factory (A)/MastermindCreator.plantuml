@@ -1,0 +1,45 @@
+@startuml Factory Method - Design Patterns
+
+Title "Factory Method - Design Patterns\n Practice 09 - Exercise (a)"
+Footer Rahigrim - Software Engineering
+
+class View <<AbstractProduct>> 
+class ConsoleView <<ConcreteProductA>>
+class GraphicsView <<ConcreteProductB>>
+
+class Mastermind {
+    +main(String[])
+}
+
+class MastermindView <<Creator>> {
+
+    -createView()
+    -play()
+
+}
+
+class ConsoleMastermind <<ConcreteCreatorA>> {
+
+    -createView()
+
+}
+
+class GraphicsMastermind <<ConcreteCreatorB>> {
+    
+    -createView()
+
+}
+
+GraphicsView -up-|> View
+ConsoleView -up-|> View
+
+ConsoleMastermind -up-|> MastermindView
+GraphicsMastermind -up-|> MastermindView
+
+Mastermind -d-> MastermindView 
+MastermindView -d-> View
+
+ConsoleMastermind ..> ConsoleView 
+GraphicsMastermind ..> GraphicsView
+
+@enduml

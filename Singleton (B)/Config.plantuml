@@ -1,0 +1,35 @@
+@startuml Singleton Pattern
+
+Title "Singleton - Design Patterns\n Practice 09 - Exercise (b)"
+Footer Rahigrim - Software Engineering
+
+class Client{
+
+    -main()
+
+}
+
+class Config <<singleton>>{
+
+    -singleton: Config
+    -name
+    -url 
+    -user
+    -password 
+
+    -config()
+    +getInstance()
+    +getName()
+    +getURL()
+    +getUser()
+    +getPassword()
+    +setName()
+    +setURL()
+    +setUser()
+    +setPassword()
+
+}
+
+
+Client -d- Config 
+@enduml
