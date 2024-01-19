@@ -1,0 +1,63 @@
+@startuml Class Diagram
+
+title "Class Diagram\n Adapter Design Pattern Implementation"
+footer "Practice 09 - Exercise C - Design Patterns - Software Engineering"
+skinparam style strictuml
+
+
+'Client'
+class TurnOnDevices {
+
+    +main(String[] args)
+    +turOnDevice(Connectable device)
+
+}
+
+'Target'
+class Connectable <<Interface>>{
+
+    +turnOn()
+    +turnOff()
+    +isOn()
+
+}
+
+class CoffeeMakerAdapter <<Adapter>> {
+
+    +turnOn()
+    +turnOff()
+    +isOn()
+
+}
+
+class CoffeeMaker <<Adaptee>>{
+
+    +On()
+    +Off()
+    +isOff()
+
+}
+
+class Lamp{
+
+    +turnOn()
+    +turnOff()
+    +isOn()
+
+}
+
+class Computer{
+
+    +turnOn()
+    +turnOff()
+    +isOn()
+
+}
+
+TurnOnDevices -right-> Connectable
+Lamp -up-|> Connectable
+Computer -up-|> Connectable
+CoffeeMaker <-l-* CoffeeMakerAdapter
+CoffeeMakerAdapter -up-|> Connectable 
+
+@enduml
