@@ -10,7 +10,7 @@ public class Config {
     private Config(){}
 
 
-    public static Config getsInstance(){
+    public static Config getInstance(){
     // Verificación: solo debe existir una única instancia.
         if (singleton == null) {
             singleton = new Config();
