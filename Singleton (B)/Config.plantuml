@@ -5,7 +5,7 @@ Footer Rahigrim - Software Engineering
 
 class Client{
 
-    -main()
+    +main(String[] args)
 
 }
 
@@ -18,7 +18,7 @@ class Config <<singleton>>{
     -password 
 
     -config()
-    +getInstance()
+    +getInstance(): Config
     +getName()
     +getURL()
     +getUser()
